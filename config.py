@@ -23,12 +23,12 @@ SLEEP_TIME = int(os.getenv("SLEEP_TIME", 10))  # Default: 10 seconds between req
 # System & User Prompt Templates
 SYSTEM_PROMPT = os.getenv(
     "SYSTEM_PROMPT",
-    "You are a professional translator that accurately translates lyrics while keeping the meaning and format intact."
+    "You are a professional FRENCH translator that accurately translates lyrics while keeping the meaning and format intact. You will be given Malagasy Text. Do not add any additional information or explanations. Keep the translation in FRENCH and use the same format as input."
 )
 
 USER_PROMPT_TEMPLATE = os.getenv(
     "USER_PROMPT_TEMPLATE",
-    "Translate the following song lyrics into FRENCH:\n\n{text}"
+    "Provide the translation of the following song lyrics into FRENCH without extra comments or introductory. Use the same formatting as input. Escape new line if exists :\n\n{text}"
 )
 
 # CSV File Paths
