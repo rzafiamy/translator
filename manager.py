@@ -1,3 +1,5 @@
+#manager.py
+
 import argparse
 from core.csv_parser import CSVParser
 from core.translator import Translator
@@ -12,14 +14,7 @@ def main(input_file, output_file):
 
     print("🌍 Translating lyrics (this may take some time)...")
     translator = Translator()
-    translated_data = translator.translate_lyrics(structured_data)  # Batch translation
-
-    print("💾 Saving translated file...")
-    with open(output_file, "w", encoding="utf-8") as f:
-        for song_num, strophe, lyrics in translated_data:
-            f.write(f'"{song_num} {strophe}"\t{lyrics}\n')
-
-    print(f"✅ Translation completed! Output saved to: {output_file}")
+    translator.translate_lyrics(structured_data, output_file)  # Now passes output_file
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Translate a CSV file of song lyrics using an LLM API.")
